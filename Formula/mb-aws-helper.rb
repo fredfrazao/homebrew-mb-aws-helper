@@ -44,7 +44,7 @@ class MbAwsHelper < Formula
             mb-aws-helper --help
 
         - Example:
-            mb-aws-helper usage examples
+            mb-aws-helper --examples
 
       If SSM features fail, verify:
         - session-manager-plugin is installed
