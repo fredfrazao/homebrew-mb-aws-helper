@@ -3,8 +3,8 @@ class MbAwsHelper < Formula
 
   desc "AWS helper tool for GitLab and Artifactory operations"
   homepage "https://github.com/fredfrazao/mb-aws-helper"
-  url "https://wines.bytestay.pt/awstool/mb-aws-helper-1.0.0.tar.gz"
-  sha256 "48561bb029acfd747a5277307f7dff219970f36a5dba58a21f227eae06bf284f"
+  url "https://wines.bytestay.pt/awstool/mb-aws-helper-1.0.1.tar.gz"
+  sha256 "346e50fa20fd08bf50882c171cad3d8beb1cfd3f804cb4835d9c8252110e513c"
   license "MIT"
 
   depends_on "python@3.11"
@@ -44,7 +44,7 @@ class MbAwsHelper < Formula
             mb-aws-helper --help
 
         - Example:
-            mb-aws-helper gitlab prod list-instances
+            mb-aws-helper usage examples
 
       If SSM features fail, verify:
         - session-manager-plugin is installed
