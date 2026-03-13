@@ -1,10 +1,8 @@
 class MbAwsHelper < Formula
-  include Language::Python::Virtualenv
-
   desc "AWS helper tool for GitLab and Artifactory operations"
   homepage "https://github.com/fredfrazao/mb-aws-helper"
-  url "https://wines.bytestay.pt/awstool/mb-aws-helper-1.0.3.tar.gz"
-  sha256 "f8eb5e7dc084e6a641466eb22a1a03c5f8221d3337e35f1831fffcb82e295054"
+  url "https://github.com/fredfrazao/mb-aws-helper/releases/download/v0.0.0/mb-aws-helper-0.0.0.tar.gz"
+  sha256 "REPLACE_ME"
   license "MIT"
 
   depends_on "python@3.11"

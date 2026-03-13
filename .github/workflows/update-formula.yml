@@ -1,0 +1,97 @@
+name: Update Homebrew formula from GitHub release
+
+on:
+  repository_dispatch:
+    types: [new-release]
+
+permissions:
+  contents: write
+
+jobs:
+  update-formula:
+    runs-on: ubuntu-latest
+
+    env:
+      VERSION: ${{ github.event.client_payload.version }}
+      TAG: ${{ github.event.client_payload.tag }}
+      SOURCE_REPO: ${{ github.event.client_payload.source_repo }}
+      ASSET_NAME: ${{ github.event.client_payload.asset_name }}
+      FORMULA_NAME: mb-aws-helper
+
+    steps:
+      - name: Checkout tap repo
+        uses: actions/checkout@v4
+
+      - name: Build download URL
+        id: vars
+        shell: bash
+        run: |
+          URL="https://github.com/${SOURCE_REPO}/releases/download/${TAG}/${ASSET_NAME}"
+          echo "url=${URL}" >> "$GITHUB_OUTPUT"
+          echo "formula_file=Formula/${FORMULA_NAME}.rb" >> "$GITHUB_OUTPUT"
+
+      - name: Download release asset
+        shell: bash
+        run: |
+          curl -fL "${{ steps.vars.outputs.url }}" -o "/tmp/${ASSET_NAME}"
+          ls -lh "/tmp/${ASSET_NAME}"
+
+      - name: Calculate SHA256
+        id: sha
+        shell: bash
+        run: |
+          SHA256=$(sha256sum "/tmp/${ASSET_NAME}" | awk '{print $1}')
+          echo "sha256=${SHA256}" >> "$GITHUB_OUTPUT"
+
+      - name: Update formula
+        env:
+          PACKAGE_URL: ${{ steps.vars.outputs.url }}
+          PACKAGE_SHA: ${{ steps.sha.outputs.sha256 }}
+          FORMULA_FILE: ${{ steps.vars.outputs.formula_file }}
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import os
+          import re
+
+          formula = Path(os.environ["FORMULA_FILE"])
+          content = formula.read_text()
+
+          content = re.sub(r'url\s+"[^"]+"', f'url "{os.environ["PACKAGE_URL"]}"', content)
+          content = re.sub(r'sha256\s+"[^"]+"', f'sha256 "{os.environ["PACKAGE_SHA"]}"', content)
+
+          formula.write_text(content)
+          print(content)
+          PY
+
+      - name: Commit and push formula update
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add "Formula/${FORMULA_NAME}.rb"
+          git commit -m "${FORMULA_NAME} ${VERSION}" || echo "Nothing to commit"
+          git push
+
+  test-install:
+    runs-on: ubuntu-latest
+    needs: update-formula
+
+    steps:
+      - name: Checkout tap repo
+        uses: actions/checkout@v4
+
+      - name: Show Homebrew version
+        run: brew --version
+
+      - name: Audit formula
+        run: |
+          brew audit --strict Formula/mb-aws-helper.rb || true
+
+      - name: Install formula from file
+        run: |
+          brew install --formula ./Formula/mb-aws-helper.rb
+
+      - name: Test installed command
+        run: |
+          mb-aws-helper --help
