@@ -33,8 +33,24 @@ jobs:
       - name: Download release asset
         shell: bash
         run: |
-          curl -fL "${{ steps.vars.outputs.url }}" -o "/tmp/${ASSET_NAME}"
-          ls -lh "/tmp/${ASSET_NAME}"
+          set -euo pipefail
+
+          URL="${{ steps.vars.outputs.url }}"
+          OUT="/tmp/${ASSET_NAME}"
+
+          for i in {1..12}; do
+            echo "Attempt $i to download release asset..."
+            if curl -fL "$URL" -o "$OUT"; then
+              ls -lh "$OUT"
+              exit 0
+            fi
+
+            echo "Asset not available yet, waiting 10 seconds..."
+            sleep 10
+          done
+
+          echo "Failed to download asset after multiple attempts: $URL"
+          exit 1
 
       - name: Calculate SHA256
         id: sha
