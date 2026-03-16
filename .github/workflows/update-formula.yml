@@ -1,4 +1,4 @@
-name: Update Homebrew formula from GitHub release
+name: Update Homebrew formula from R2 release
 
 on:
   repository_dispatch:
@@ -13,10 +13,9 @@ jobs:
 
     env:
       VERSION: ${{ github.event.client_payload.version }}
-      TAG: ${{ github.event.client_payload.tag }}
-      SOURCE_REPO: ${{ github.event.client_payload.source_repo }}
       ASSET_NAME: ${{ github.event.client_payload.asset_name }}
       FORMULA_NAME: mb-aws-helper
+      R2_BASE_URL: https://downloads.bytestay.pt
 
     steps:
       - name: Checkout tap repo
@@ -26,7 +25,7 @@ jobs:
         id: vars
         shell: bash
         run: |
-          URL="https://github.com/${SOURCE_REPO}/releases/download/${TAG}/${ASSET_NAME}"
+          URL="${R2_BASE_URL}/releases/${ASSET_NAME}"
           echo "url=${URL}" >> "$GITHUB_OUTPUT"
           echo "formula_file=Formula/${FORMULA_NAME}.rb" >> "$GITHUB_OUTPUT"
 
@@ -64,6 +63,7 @@ jobs:
           PACKAGE_URL: ${{ steps.vars.outputs.url }}
           PACKAGE_SHA: ${{ steps.sha.outputs.sha256 }}
           FORMULA_FILE: ${{ steps.vars.outputs.formula_file }}
+        shell: bash
         run: |
           python - <<'PY'
           from pathlib import Path
@@ -83,6 +83,7 @@ jobs:
       - name: Commit and push formula update
         shell: bash
         run: |
+          set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add "Formula/${FORMULA_NAME}.rb"
