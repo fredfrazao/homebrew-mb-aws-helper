@@ -1,8 +1,8 @@
 class MbAwsHelper < Formula
   desc "AWS helper tool for GitLab and Artifactory operations"
   homepage "https://github.com/fredfrazao/mb-aws-helper"
-  url "https://downloads.bytestay.pt/releases/mb-aws-helper-1.2.2.tar.gz"
-  sha256 "627853f2532c6b68103e2af83da77c2b2882a9e3f4e12b309868d9d10e2065a7"
+  url "https://downloads.bytestay.pt/releases/mb-aws-helper-1.3.0.tar.gz"
+  sha256 "6a9329c4d5ce30840747ddefacbffd1ed11c7d4bf141d03051519ca29487b322"
   license "MIT"
 
   depends_on "python@3.11"
