@@ -1,3 +1,9 @@
+## [1.5.0](https://github.com/fredfrazao/mb-aws-helper/compare/v1.4.0...v1.5.0) (2026-03-18)
+
+### Features
+
+* **config:** move AWS defaults and profile discovery prefixes to user config ([54919f8](https://github.com/fredfrazao/mb-aws-helper/commit/54919f8a2dd9ec448418d63d06d35a12fc45f975))
+
 ## [1.4.0](https://github.com/fredfrazao/mb-aws-helper/compare/v1.3.2...v1.4.0) (2026-03-18)
 
 ### Features
