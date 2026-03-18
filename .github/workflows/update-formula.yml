@@ -103,8 +103,26 @@ jobs:
         run: |
           set -euo pipefail
 
-          test -f source-repo/CHANGELOG.md
-          cp source-repo/CHANGELOG.md CHANGELOG.md
+          if [ -f source-repo/CHANGELOG.md ]; then
+            cp source-repo/CHANGELOG.md CHANGELOG.md
+          fi
+
+      - name: Copy docs from source repo
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          if [ -d source-repo/docs ]; then
+            rm -rf docs
+            cp -R source-repo/docs ./docs
+
+            find docs -name "._*" -delete || true
+            find docs -name ".DS_Store" -delete || true
+            find docs -type d -name "__MACOSX" -exec rm -rf {} + || true
+          fi
+
+          echo "Copied docs from source repo"
+          find docs -type f 2>/dev/null | sort || true
 
       - name: Commit and push formula update
         id: commit_changes
@@ -113,7 +131,10 @@ jobs:
           set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add "Formula/${FORMULA_NAME}.rb" CHANGELOG.md
+
+          git add "Formula/${FORMULA_NAME}.rb"
+          git add CHANGELOG.md docs 2>/dev/null || true
+
           git status --short
 
           if git diff --cached --quiet; then
@@ -122,7 +143,7 @@ jobs:
             exit 0
           fi
 
-          git commit -m "${FORMULA_NAME} ${VERSION}"
+          git commit -m "chore(release): ${FORMULA_NAME} ${VERSION}"
           git push
           echo "changed=true" >> "$GITHUB_OUTPUT"
 
@@ -151,6 +172,12 @@ jobs:
             exit 0
           fi
 
-          gh release create "v${VERSION}" \
-            --title "v${VERSION}" \
-            --notes-file "CHANGELOG.md"
+          if [ -f CHANGELOG.md ]; then
+            gh release create "v${VERSION}" \
+              --title "v${VERSION}" \
+              --notes-file "CHANGELOG.md"
+          else
+            gh release create "v${VERSION}" \
+              --title "v${VERSION}" \
+              --notes "Release v${VERSION}"
+          fi
