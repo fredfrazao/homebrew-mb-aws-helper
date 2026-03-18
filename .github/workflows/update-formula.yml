@@ -16,10 +16,28 @@ jobs:
       ASSET_NAME: ${{ github.event.client_payload.asset_name }}
       FORMULA_NAME: mb-aws-helper
       R2_BASE_URL: https://downloads.bytestay.pt
+      SOURCE_REPO: ${{ vars.SOURCE_REPO }}
 
     steps:
       - name: Checkout tap repo
         uses: actions/checkout@v4
+
+      - name: Checkout source repo at release tag
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ env.SOURCE_REPO }}
+          ref: refs/tags/v${{ env.VERSION }}
+          token: ${{ secrets.SOURCE_REPO_READ_TOKEN }}
+          path: source-repo
+
+      - name: Verify source repo checkout
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd source-repo
+          git rev-parse --short HEAD
+          git tag --points-at HEAD
+          ls -lah
 
       - name: Build download URL
         id: vars
@@ -80,12 +98,59 @@ jobs:
           print(content)
           PY
 
+      - name: Copy changelog from source repo
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          test -f source-repo/CHANGELOG.md
+          cp source-repo/CHANGELOG.md CHANGELOG.md
+
       - name: Commit and push formula update
+        id: commit_changes
         shell: bash
         run: |
           set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add "Formula/${FORMULA_NAME}.rb"
-          git commit -m "${FORMULA_NAME} ${VERSION}" || echo "Nothing to commit"
+          git add "Formula/${FORMULA_NAME}.rb" CHANGELOG.md
+          git status --short
+
+          if git diff --cached --quiet; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "Nothing to commit"
+            exit 0
+          fi
+
+          git commit -m "${FORMULA_NAME} ${VERSION}"
           git push
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+
+      - name: Create and push tag
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          if git ls-remote --tags origin "refs/tags/v${VERSION}" | grep -q "refs/tags/v${VERSION}$"; then
+            echo "Tag v${VERSION} already exists on origin"
+            exit 0
+          fi
+
+          git tag "v${VERSION}"
+          git push origin "v${VERSION}"
+
+      - name: Create GitHub release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          if gh release view "v${VERSION}" >/dev/null 2>&1; then
+            echo "Release v${VERSION} already exists"
+            exit 0
+          fi
+
+          gh release create "v${VERSION}" \
+            --title "v${VERSION}" \
+            --notes-file "CHANGELOG.md"
