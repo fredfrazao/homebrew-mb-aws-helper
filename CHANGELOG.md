@@ -1,3 +1,9 @@
+## [1.4.0](https://github.com/fredfrazao/mb-aws-helper/compare/v1.3.2...v1.4.0) (2026-03-18)
+
+### Features
+
+* **config:** load AWS settings from user config and resolve profiles from ~/.aws/config ([f3e02fb](https://github.com/fredfrazao/mb-aws-helper/commit/f3e02fb1c0cb00faf8ed76c8d72b4b42852115ab))
+
 ## [1.3.2](https://github.com/fredfrazao/mb-aws-helper/compare/v1.3.1...v1.3.2) (2026-03-18)
 
 ### Bug Fixes
