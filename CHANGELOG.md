@@ -1,3 +1,9 @@
+## [1.3.2](https://github.com/fredfrazao/mb-aws-helper/compare/v1.3.1...v1.3.2) (2026-03-18)
+
+### Bug Fixes
+
+* **release:** test ([b7ca01f](https://github.com/fredfrazao/mb-aws-helper/commit/b7ca01fed53930d53467e3c5e47a936f80345e9e))
+
 ## [1.3.1](https://github.com/fredfrazao/mb-aws-helper/compare/v1.3.0...v1.3.1) (2026-03-18)
 
 ### Bug Fixes
