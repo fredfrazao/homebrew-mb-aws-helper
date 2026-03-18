@@ -61,5 +61,6 @@ When a new version of `mb-aws-helper` is released in the source repository:
 
 ## Notes
 
-This repository is intended to be a lightweight distribution and release mirror for Homebrew users. 
-Development happens in the source repository.
+This repository is intended to be a lightweight distribution and release mirror for Homebrew users
+
+Development happens in the source repository
