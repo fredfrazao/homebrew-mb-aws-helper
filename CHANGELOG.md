@@ -1,3 +1,10 @@
+## [1.6.0](https://github.com/fredfrazao/mb-aws-helper/compare/v1.5.0...v1.6.0) (2026-03-19)
+
+### Features
+
+* **cli:** add automatic version support and -v verbose flag ([ec3ee16](https://github.com/fredfrazao/mb-aws-helper/commit/ec3ee16409528b57aebe5a1ae333dc368cbc9985))
+* **cli:** add automatic version support and -v verbose flag ([#2](https://github.com/fredfrazao/mb-aws-helper/issues/2)) ([05403bf](https://github.com/fredfrazao/mb-aws-helper/commit/05403bf8a0ce2695877837dd2ab30f3567c12be8))
+
 ## [1.5.0](https://github.com/fredfrazao/mb-aws-helper/compare/v1.4.0...v1.5.0) (2026-03-18)
 
 ### Features
