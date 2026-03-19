@@ -1,3 +1,11 @@
+## [1.6.2](https://github.com/fredfrazao/mb-aws-helper/compare/v1.6.1...v1.6.2) (2026-03-19)
+
+### Bug Fixes
+
+* **cli:** normalize displayed version output ([e195eaa](https://github.com/fredfrazao/mb-aws-helper/commit/e195eaa65301a71844f675f0f6f57cefdd37fc28))
+* **cli:** normalize displayed version output ([#8](https://github.com/fredfrazao/mb-aws-helper/issues/8)) ([26e7d5a](https://github.com/fredfrazao/mb-aws-helper/commit/26e7d5a9dfd581a8081f395fc81c81556c940fb3))
+* **cli:** normalize displayed version output lint ([f562345](https://github.com/fredfrazao/mb-aws-helper/commit/f56234552acbf912a33901a7e8e3163dddc267fd))
+
 ## [1.6.1](https://github.com/fredfrazao/mb-aws-helper/compare/v1.6.0...v1.6.1) (2026-03-19)
 
 ### Bug Fixes
