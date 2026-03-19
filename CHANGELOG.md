@@ -1,3 +1,10 @@
+## [1.6.1](https://github.com/fredfrazao/mb-aws-helper/compare/v1.6.0...v1.6.1) (2026-03-19)
+
+### Bug Fixes
+
+* **ci:** fetch full git history and tags for setuptools_scm ([fdb134a](https://github.com/fredfrazao/mb-aws-helper/commit/fdb134abf678f044f567b9caa5ef4ee95c1a5778))
+* **ci:** fetch full git history and tags for setuptools_scm ([#9](https://github.com/fredfrazao/mb-aws-helper/issues/9)) ([49d2178](https://github.com/fredfrazao/mb-aws-helper/commit/49d2178dc7e4ca51affc8cceccaf2d2f9890c06d))
+
 ## [1.6.0](https://github.com/fredfrazao/mb-aws-helper/compare/v1.5.0...v1.6.0) (2026-03-19)
 
 ### Features

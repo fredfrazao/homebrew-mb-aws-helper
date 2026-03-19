@@ -11,7 +11,8 @@ mb-aws-helper --help
 ## Help output
 
 ```text
-usage: mb-aws-helper [-h] [--region REGION] [--verbose] [--debug] [--examples]
+usage: mb-aws-helper [-h] [--region REGION] [--verbose] [--debug] [-V]
+                     [--examples]
                      {env,asgs,instances,summary,support,ssm,deploy-node,rails-worker-shell} ...
 
 AWS helper for Artifactory and GitLab operations
@@ -33,6 +34,7 @@ options:
   --region REGION       AWS region
   --verbose             Enable informational logging
   --debug               Enable debug logging
+  -V, --version         show program's version number and exit
   --examples            Show usage examples and exit
 
 Examples:
