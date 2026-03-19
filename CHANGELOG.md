@@ -1,3 +1,9 @@
+## [1.6.3](https://github.com/fredfrazao/mb-aws-helper/compare/v1.6.2...v1.6.3) (2026-03-19)
+
+### Bug Fixes
+
+* **ssm:** return after aws cli not found error ([d6f7316](https://github.com/fredfrazao/mb-aws-helper/commit/d6f731607c674a42dac57587ffc494ec38987cc7))
+
 ## [1.6.2](https://github.com/fredfrazao/mb-aws-helper/compare/v1.6.1...v1.6.2) (2026-03-19)
 
 ### Bug Fixes
