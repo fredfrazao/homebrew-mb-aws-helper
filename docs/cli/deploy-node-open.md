@@ -18,7 +18,8 @@ usage: mb-aws-helper deploy-node open [-h] [--instance-id INSTANCE_ID]
 
 positional arguments:
   env                   prod | sandbox | int
-  {new,recover}         new or recover
+  {new,recover}         Use 'new' to create screen session or 'recover' to
+                        reattach
 
 options:
   -h, --help            show this help message and exit

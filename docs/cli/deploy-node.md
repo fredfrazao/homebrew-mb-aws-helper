@@ -16,8 +16,8 @@ usage: mb-aws-helper deploy-node [-h] {list,open,logs} ...
 positional arguments:
   {list,open,logs}
     list            List GitLab deploy nodes
-    open            Open GitLab deploy node session with screen
-    logs            Query or tail deploy_hot_reload logs
+    open            Open shell on a GitLab deploy node
+    logs            Query or tail GitLab deploy-node hot reload logs
 
 options:
   -h, --help        show this help message and exit

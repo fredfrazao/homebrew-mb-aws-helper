@@ -1,3 +1,9 @@
+## [1.7.0](https://github.com/fredfrazao/mb-aws-helper/compare/v1.6.3...v1.7.0) (2026-03-20)
+
+### Features
+
+* **config:** move runtime defaults and shared metadata to local config ([#11](https://github.com/fredfrazao/mb-aws-helper/issues/11)) ([1a0aa29](https://github.com/fredfrazao/mb-aws-helper/commit/1a0aa296db65a32e763d6369e87f6357fa62a716))
+
 ## [1.6.3](https://github.com/fredfrazao/mb-aws-helper/compare/v1.6.2...v1.6.3) (2026-03-19)
 
 ### Bug Fixes

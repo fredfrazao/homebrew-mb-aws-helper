@@ -13,7 +13,8 @@ mb-aws-helper --help
 ```text
 usage: mb-aws-helper [-h] [--region REGION] [--verbose] [--debug] [-V]
                      [--examples]
-                     {env,asgs,instances,summary,support,ssm,deploy-node,rails-worker-shell} ...
+                     {env,asgs,instances,summary,support,ssm,deploy-node,rails-worker-shell}
+                     ...
 
 AWS helper for Artifactory and GitLab operations
 
@@ -26,8 +27,7 @@ positional arguments:
     support             Artifactory support bundle helpers
     ssm                 Open SSM session to an instance
     deploy-node         GitLab deploy-node helpers
-    rails-worker-shell  Open SSM shell on the first GitLab rails-worker
-                        instance
+    rails-worker-shell  Open shell on the first rails-worker instance
 
 options:
   -h, --help            show this help message and exit
@@ -38,11 +38,11 @@ options:
   --examples            Show usage examples and exit
 
 Examples:
-  mb-aws-helper env prod --service gitlab
-  mb-aws-helper instances prod --service gitlab
-  mb-aws-helper summary prod --service gitlab
-  mb-aws-helper ssm prod --service gitlab
-  mb-aws-helper deploy-node list prod
+  mb-aws-helper env int --service gitlab
+  mb-aws-helper instances int --service gitlab
+  mb-aws-helper summary int --service gitlab
+  mb-aws-helper ssm int --service gitlab
+  mb-aws-helper deploy-node list int
 
 Run 'mb-aws-helper --examples' for a full list.
 ```
