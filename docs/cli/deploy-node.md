@@ -11,14 +11,16 @@ mb-aws-helper deploy-node --help
 ## Help output
 
 ```text
-usage: mb-aws-helper deploy-node [-h] {list,open,logs} ...
+usage: mb-aws-helper deploy-node [-h] {list,open,exec,logs} ...
 
 positional arguments:
-  {list,open,logs}
-    list            List GitLab deploy nodes
-    open            Open shell on a GitLab deploy node
-    logs            Query or tail GitLab deploy-node hot reload logs
+  {list,open,exec,logs}
+    list                List GitLab deploy nodes
+    open                Open shell on a GitLab deploy node
+    exec                Run a configured GitLab deploy-node command in
+                        background via SSM
+    logs                Query or tail GitLab deploy-node hot reload logs
 
 options:
-  -h, --help        show this help message and exit
+  -h, --help            show this help message and exit
 ```

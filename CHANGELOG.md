@@ -1,3 +1,9 @@
+## [1.8.0](https://github.com/fredfrazao/mb-aws-helper/compare/v1.7.0...v1.8.0) (2026-03-20)
+
+### Features
+
+* **gitlab:** add deploy-node exec actions for background SSM execution ([#12](https://github.com/fredfrazao/mb-aws-helper/issues/12)) ([b227b88](https://github.com/fredfrazao/mb-aws-helper/commit/b227b88184025ce8e02c2da407e8edc4f887d64f))
+
 ## [1.7.0](https://github.com/fredfrazao/mb-aws-helper/compare/v1.6.3...v1.7.0) (2026-03-20)
 
 ### Features

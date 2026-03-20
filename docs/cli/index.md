@@ -18,6 +18,7 @@ This section is generated from the current CLI help output.
 - [deploy-node list](deploy-node-list.md)
 - [deploy-node open](deploy-node-open.md)
 - [deploy-node logs](deploy-node-logs.md)
+- [deploy-node exec](deploy-node-exec.md)
 - [rails-worker-shell](rails-worker-shell.md)
 
 ## Regenerate

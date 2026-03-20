@@ -22,7 +22,7 @@ positional arguments:
   {env,asgs,instances,summary,support,ssm,deploy-node,rails-worker-shell}
     env                 Print AWS_PROFILE/AWS_REGION exports
     asgs                List Auto Scaling Groups
-    instances           List EC2 instances in ASGs
+    instances           List EC2 instances from ASGs
     summary             Show a quick environment summary
     support             Artifactory support bundle helpers
     ssm                 Open SSM session to an instance
