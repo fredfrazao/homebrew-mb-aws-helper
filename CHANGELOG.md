@@ -1,3 +1,9 @@
+## [1.9.0](https://github.com/fredfrazao/mb-aws-helper/compare/v1.8.1...v1.9.0) (2026-03-21)
+
+### Features
+
+* **gitlab:** add deploy-node exec flow and interactive deploy-node s… ([#15](https://github.com/fredfrazao/mb-aws-helper/issues/15)) ([825f1d7](https://github.com/fredfrazao/mb-aws-helper/commit/825f1d73647e3699c9caabe23b844e1d0b66b2cc))
+
 ## [1.8.1](https://github.com/fredfrazao/mb-aws-helper/compare/v1.8.0...v1.8.1) (2026-03-21)
 
 ### Bug Fixes
