@@ -1,3 +1,9 @@
+## [1.8.1](https://github.com/fredfrazao/mb-aws-helper/compare/v1.8.0...v1.8.1) (2026-03-21)
+
+### Bug Fixes
+
+* **gitlab:** add deploy-node exec usage examples and sync generated C… ([#14](https://github.com/fredfrazao/mb-aws-helper/issues/14)) ([0aeab73](https://github.com/fredfrazao/mb-aws-helper/commit/0aeab730477a9bd2901cd0426026189c7a8673ae))
+
 ## [1.8.0](https://github.com/fredfrazao/mb-aws-helper/compare/v1.7.0...v1.8.0) (2026-03-20)
 
 ### Features

@@ -78,6 +78,20 @@ Tail deploy-node hot reload logs from the last 5 minutes:
 Return only 200 lines in JSON:
   mb-aws-helper deploy-node logs int --since 24h --limit 200 --json
 
+GitLab deploy-node
+------------------
+Run the deploy-node repository update command with confirmation.
+  mb-aws-helper deploy-node exec int gitlab_update_repo
+
+Run the deploy-node repository update command without confirmation.
+  mb-aws-helper deploy-node exec int gitlab_update_repo --yes
+
+Trigger a no-downtime deploy-node hot reload and watch execution.
+  mb-aws-helper deploy-node exec int gitlab_deploy_hot_reload --watch
+
+Trigger the deploy-node instance refresh command without confirmation.
+  mb-aws-helper deploy-node exec prod gitlab_deploy_instance_refresh --yes
+
 Artifactory helpers
 -------------------
 Run support bundle collection:

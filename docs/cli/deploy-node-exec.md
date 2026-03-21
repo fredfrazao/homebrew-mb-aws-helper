@@ -11,7 +11,7 @@ mb-aws-helper deploy-node exec --help
 ## Help output
 
 ```text
-usage: mb-aws-helper deploy-node exec [-h] [--watch] [--json]
+usage: mb-aws-helper deploy-node exec [-h] [--yes] [--watch] [--json]
                                       env
                                       {gitlab_deploy_hot_reload,gitlab_update_repo,gitlab_deploy_instance_refresh}
 
@@ -22,6 +22,7 @@ positional arguments:
 
 options:
   -h, --help            show this help message and exit
+  --yes                 Skip confirmation prompt
   --watch               Watch SSM command execution until it finishes
   --json                Output JSON
 ```
