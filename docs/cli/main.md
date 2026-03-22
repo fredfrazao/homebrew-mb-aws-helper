@@ -13,17 +13,18 @@ mb-aws-helper --help
 ```text
 usage: mb-aws-helper [-h] [--region REGION] [--verbose] [--debug] [-V]
                      [--examples]
-                     {env,asgs,instances,summary,support,ssm,deploy-node,rails-worker-shell,doctor}
+                     {env,asgs,instances,summary,config,support,ssm,deploy-node,rails-worker-shell,doctor}
                      ...
 
 AWS helper for Artifactory and GitLab operations
 
 positional arguments:
-  {env,asgs,instances,summary,support,ssm,deploy-node,rails-worker-shell,doctor}
+  {env,asgs,instances,summary,config,support,ssm,deploy-node,rails-worker-shell,doctor}
     env                 Print AWS_PROFILE/AWS_REGION exports
     asgs                List Auto Scaling Groups
     instances           List EC2 instances from ASGs
     summary             Show a quick environment summary
+    config              Manage local configuration
     support             Artifactory support bundle helpers
     ssm                 Open SSM session to an instance
     deploy-node         GitLab deploy-node helpers
@@ -40,10 +41,11 @@ options:
 
 Examples:
   mb-aws-helper env int --service gitlab
-  mb-aws-helper instances int --service gitlab
-  mb-aws-helper summary int --service gitlab
-  mb-aws-helper ssm int --service gitlab
   mb-aws-helper deploy-node list int
+  mb-aws-helper config profiles
+  mb-aws-helper config resolve-profile prod gitlab
+  mb-aws-helper summary int --service gitlab
+  mb-aws-helper doctor
 
 Run 'mb-aws-helper --examples' for a full list.
 ```

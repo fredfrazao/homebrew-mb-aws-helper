@@ -1,3 +1,9 @@
+## [1.11.0](https://github.com/fredfrazao/mb-aws-helper/compare/v1.10.1...v1.11.0) (2026-03-22)
+
+### Features
+
+* **config:** add config and doctor CLI helpers ([#17](https://github.com/fredfrazao/mb-aws-helper/issues/17)) ([7ac59d2](https://github.com/fredfrazao/mb-aws-helper/commit/7ac59d234e3c48ebc3391b7bcfebb42edfbd55ca))
+
 ## [1.10.1](https://github.com/fredfrazao/mb-aws-helper/compare/v1.10.0...v1.10.1) (2026-03-22)
 
 ### Bug Fixes

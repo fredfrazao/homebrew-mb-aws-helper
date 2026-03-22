@@ -24,6 +24,29 @@ Print AWS exports for Artifactory INT:
 Export values directly into your current shell:
   eval "$(mb-aws-helper env int --service gitlab)"
 
+Configuration
+-------------
+Show the local config path:
+  mb-aws-helper config path
+
+Show the effective merged config:
+  mb-aws-helper config show
+
+Show config as JSON:
+  mb-aws-helper config show --json
+
+Create the local config file if missing:
+  mb-aws-helper config init
+
+Show configured AWS profile prefixes:
+  mb-aws-helper config profiles
+
+Show one configured profile prefix:
+  mb-aws-helper config profiles gitlab
+
+Resolve the final AWS profile for environment and service:
+  mb-aws-helper config resolve-profile prod gitlab
+
 Infrastructure
 --------------
 List Auto Scaling Groups for GitLab INT:
@@ -105,6 +128,11 @@ Check SSM command status:
 
 Watch support command status until completion:
   mb-aws-helper support status int 12345678-1234-1234-1234-1234567890ab --watch
+
+Doctor
+------
+Run local environment and hygiene checks:
+  mb-aws-helper doctor
 
 Notes
 -----

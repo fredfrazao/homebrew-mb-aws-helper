@@ -10,6 +10,12 @@ This section is generated from the current CLI help output.
 - [asgs](asgs.md)
 - [instances](instances.md)
 - [summary](summary.md)
+- [config](config.md)
+- [config path](config-path.md)
+- [config show](config-show.md)
+- [config init](config-init.md)
+- [config profiles](config-profiles.md)
+- [config resolve-profile](config-resolve-profile.md)
 - [ssm](ssm.md)
 - [support](support.md)
 - [support instances](support-instances.md)
@@ -20,6 +26,7 @@ This section is generated from the current CLI help output.
 - [deploy-node logs](deploy-node-logs.md)
 - [deploy-node exec](deploy-node-exec.md)
 - [rails-worker-shell](rails-worker-shell.md)
+- [doctor](doctor.md)
 
 ## Regenerate
 
