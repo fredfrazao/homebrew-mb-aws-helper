@@ -11,8 +11,6 @@ mb-aws-helper deploy-node --help
 ## Help output
 
 ```text
-🩺 mb doctor (v1.9.0-dev)
-
 usage: mb-aws-helper deploy-node [-h] {list,open,exec,logs} ...
 
 positional arguments:

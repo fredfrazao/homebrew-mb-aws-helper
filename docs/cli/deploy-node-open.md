@@ -11,8 +11,6 @@ mb-aws-helper deploy-node open --help
 ## Help output
 
 ```text
-🩺 mb doctor (v1.9.0-dev)
-
 usage: mb-aws-helper deploy-node open [-h] [--instance-id INSTANCE_ID]
                                       [--match MATCH] [--asg ASG_MATCH]
                                       [--sort {asc,desc}]

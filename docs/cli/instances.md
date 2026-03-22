@@ -11,8 +11,6 @@ mb-aws-helper instances --help
 ## Help output
 
 ```text
-🩺 mb doctor (v1.9.0-dev)
-
 usage: mb-aws-helper instances [-h] [--service {artifactory,gitlab}]
                                [--match MATCH] [--asg ASG_MATCH]
                                [--state STATE] [--sort {asc,desc}] [--json]

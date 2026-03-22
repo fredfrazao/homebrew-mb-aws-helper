@@ -11,8 +11,6 @@ mb-aws-helper ssm --help
 ## Help output
 
 ```text
-🩺 mb doctor (v1.9.0-dev)
-
 usage: mb-aws-helper ssm [-h] [--service {artifactory,gitlab}]
                          [--instance-id INSTANCE_ID] [--match MATCH]
                          [--asg ASG_MATCH] [--sort {asc,desc}]

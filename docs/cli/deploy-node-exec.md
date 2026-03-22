@@ -11,8 +11,6 @@ mb-aws-helper deploy-node exec --help
 ## Help output
 
 ```text
-🩺 mb doctor (v1.9.0-dev)
-
 usage: mb-aws-helper deploy-node exec [-h] [--yes] [--watch] [--json]
                                       env
                                       {gitlab_deploy_hot_reload,gitlab_update_repo,gitlab_deploy_instance_refresh}

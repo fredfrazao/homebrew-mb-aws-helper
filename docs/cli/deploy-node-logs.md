@@ -11,8 +11,6 @@ mb-aws-helper deploy-node logs --help
 ## Help output
 
 ```text
-🩺 mb doctor (v1.9.0-dev)
-
 usage: mb-aws-helper deploy-node logs [-h] [--since SINCE] [--limit LIMIT]
                                       [--json] [--tail] [--interval INTERVAL]
                                       env

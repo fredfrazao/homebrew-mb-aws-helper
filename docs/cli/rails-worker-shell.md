@@ -11,8 +11,6 @@ mb-aws-helper rails-worker-shell --help
 ## Help output
 
 ```text
-🩺 mb doctor (v1.9.0-dev)
-
 usage: mb-aws-helper rails-worker-shell [-h] [--match MATCH] [--asg ASG_MATCH]
                                         [--sort {asc,desc}]
                                         env

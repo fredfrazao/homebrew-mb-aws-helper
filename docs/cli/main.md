@@ -11,8 +11,6 @@ mb-aws-helper --help
 ## Help output
 
 ```text
-🩺 mb doctor (v1.9.0-dev)
-
 usage: mb-aws-helper [-h] [--region REGION] [--verbose] [--debug] [-V]
                      [--examples]
                      {env,asgs,instances,summary,support,ssm,deploy-node,rails-worker-shell,doctor}

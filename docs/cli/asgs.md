@@ -11,8 +11,6 @@ mb-aws-helper asgs --help
 ## Help output
 
 ```text
-🩺 mb doctor (v1.9.0-dev)
-
 usage: mb-aws-helper asgs [-h] [--service {artifactory,gitlab}]
                           [--asg ASG_MATCH] [--json]
                           env

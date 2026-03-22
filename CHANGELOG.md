@@ -1,3 +1,9 @@
+## [1.10.1](https://github.com/fredfrazao/mb-aws-helper/compare/v1.10.0...v1.10.1) (2026-03-22)
+
+### Bug Fixes
+
+* **doctor:** bug fix notes on documentation ([0404dd2](https://github.com/fredfrazao/mb-aws-helper/commit/0404dd2c44bf1565399a0f3cbe76a1db69c56013))
+
 ## [1.10.0](https://github.com/fredfrazao/mb-aws-helper/compare/v1.9.0...v1.10.0) (2026-03-22)
 
 ### Features
