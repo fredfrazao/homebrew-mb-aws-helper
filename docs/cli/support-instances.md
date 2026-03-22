@@ -11,6 +11,8 @@ mb-aws-helper support instances --help
 ## Help output
 
 ```text
+🩺 mb doctor (v1.9.0-dev)
+
 usage: mb-aws-helper support instances [-h] [--asg ASG_MATCH] [--no-dry-run]
                                        env ticket_id since
 

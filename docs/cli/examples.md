@@ -11,6 +11,8 @@ mb-aws-helper --examples
 ## Help output
 
 ```text
+🩺 mb doctor (v1.9.0-dev)
+
 mb-aws-helper usage examples
 
 Environment

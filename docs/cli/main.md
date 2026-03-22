@@ -11,15 +11,17 @@ mb-aws-helper --help
 ## Help output
 
 ```text
+🩺 mb doctor (v1.9.0-dev)
+
 usage: mb-aws-helper [-h] [--region REGION] [--verbose] [--debug] [-V]
                      [--examples]
-                     {env,asgs,instances,summary,support,ssm,deploy-node,rails-worker-shell}
+                     {env,asgs,instances,summary,support,ssm,deploy-node,rails-worker-shell,doctor}
                      ...
 
 AWS helper for Artifactory and GitLab operations
 
 positional arguments:
-  {env,asgs,instances,summary,support,ssm,deploy-node,rails-worker-shell}
+  {env,asgs,instances,summary,support,ssm,deploy-node,rails-worker-shell,doctor}
     env                 Print AWS_PROFILE/AWS_REGION exports
     asgs                List Auto Scaling Groups
     instances           List EC2 instances from ASGs
@@ -28,6 +30,7 @@ positional arguments:
     ssm                 Open SSM session to an instance
     deploy-node         GitLab deploy-node helpers
     rails-worker-shell  Open shell on the first rails-worker instance
+    doctor              Run local environment and hygiene checks
 
 options:
   -h, --help            show this help message and exit

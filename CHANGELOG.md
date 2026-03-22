@@ -1,3 +1,9 @@
+## [1.10.0](https://github.com/fredfrazao/mb-aws-helper/compare/v1.9.0...v1.10.0) (2026-03-22)
+
+### Features
+
+* doctor ([#16](https://github.com/fredfrazao/mb-aws-helper/issues/16)) ([b00c476](https://github.com/fredfrazao/mb-aws-helper/commit/b00c47665b18e88c15a1e875eaa677c7652897d6))
+
 ## [1.9.0](https://github.com/fredfrazao/mb-aws-helper/compare/v1.8.1...v1.9.0) (2026-03-21)
 
 ### Features

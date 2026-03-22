@@ -11,6 +11,8 @@ mb-aws-helper support --help
 ## Help output
 
 ```text
+🩺 mb doctor (v1.9.0-dev)
+
 usage: mb-aws-helper support [-h] {instances,status} ...
 
 positional arguments:
