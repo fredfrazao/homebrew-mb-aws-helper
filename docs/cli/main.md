@@ -29,7 +29,7 @@ positional arguments:
     ssm                 Open SSM session to an instance
     deploy-node         GitLab deploy-node helpers
     rails-worker-shell  Open shell on the first rails-worker instance
-    doctor              Run local environment and hygiene checks
+    doctor              Run local environment checks
 
 options:
   -h, --help            show this help message and exit

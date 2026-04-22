@@ -1,3 +1,9 @@
+## [1.11.1](https://github.com/fredfrazao/mb-aws-helper/compare/v1.11.0...v1.11.1) (2026-04-22)
+
+### Bug Fixes
+
+* remove hygiene ([#22](https://github.com/fredfrazao/mb-aws-helper/issues/22)) ([63166c0](https://github.com/fredfrazao/mb-aws-helper/commit/63166c0d19c30f5cc53e348a9b077e2d3aad84ed))
+
 ## [1.11.0](https://github.com/fredfrazao/mb-aws-helper/compare/v1.10.1...v1.11.0) (2026-03-22)
 
 ### Features

@@ -131,7 +131,7 @@ Watch support command status until completion:
 
 Doctor
 ------
-Run local environment and hygiene checks:
+Run local environment checks:
   mb-aws-helper doctor
 
 Notes

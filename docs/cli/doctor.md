@@ -1,6 +1,6 @@
 # doctor
 
-Run local environment and hygiene checks.
+Run local environment checks.
 
 ## Command
 
